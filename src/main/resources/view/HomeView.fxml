@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.jonathan.blocnotas.controller.HomeController"
+            styleClass="raiz">
+    <top>
+        <HBox styleClass="barra-superior" alignment="CENTER_LEFT">
+            <Label text="Mis notas" styleClass="titulo-app"/>
+        </HBox>
+    </top>
+    <center>
+        <StackPane>
+            <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="scroll-notas">
+                <content>
+                    <FlowPane fx:id="contenedorNotas" hgap="16" vgap="16" styleClass="cuadricula">
+                        <padding>
+                            <Insets top="20" right="20" bottom="100" left="20"/>
+                        </padding>
+                    </FlowPane>
+                </content>
+            </ScrollPane>
+
+            <VBox fx:id="vacio" alignment="CENTER" spacing="8" mouseTransparent="true">
+                <Label text="No hay ninguna nota guardada" styleClass="vacio-titulo"/>
+                <Label text="Escribe tus ideas y empieza a crear" styleClass="vacio-texto"/>
+            </VBox>
+
+            <Button text="+" onAction="#onNuevaNota" styleClass="boton-fab"
+                    StackPane.alignment="BOTTOM_RIGHT">
+                <StackPane.margin>
+                    <Insets right="30" bottom="30"/>
+                </StackPane.margin>
+            </Button>
+        </StackPane>
+    </center>
+</BorderPane>

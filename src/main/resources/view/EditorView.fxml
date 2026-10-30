@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.jonathan.blocnotas.controller.EditorController"
+            styleClass="raiz">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Archivo">
+                    <MenuItem text="Nueva nota" onAction="#onNuevaNota">
+                        <accelerator><KeyCodeCombination code="N" control="DOWN" alt="UP" shift="UP" meta="UP" shortcut="UP"/></accelerator>
+                    </MenuItem>
+                    <MenuItem text="Volver a mis notas" onAction="#onVolver"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Guardar como…" onAction="#onGuardarComo">
+                        <accelerator><KeyCodeCombination code="S" control="DOWN" alt="UP" shift="DOWN" meta="UP" shortcut="UP"/></accelerator>
+                    </MenuItem>
+                    <MenuItem text="Exportar a PDF" onAction="#onExportarPdf">
+                        <accelerator><KeyCodeCombination code="E" control="DOWN" alt="UP" shift="UP" meta="UP" shortcut="UP"/></accelerator>
+                    </MenuItem>
+                    <MenuItem text="Imprimir…" onAction="#onImprimir">
+                        <accelerator><KeyCodeCombination code="P" control="DOWN" alt="UP" shift="UP" meta="UP" shortcut="UP"/></accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Eliminar nota" onAction="#onEliminar"/>
+                    <MenuItem text="Salir" onAction="#onSalir"/>
+                </Menu>
+                <Menu text="Edición">
+                    <MenuItem text="Deshacer" onAction="#onDeshacer"/>
+                    <MenuItem text="Rehacer" onAction="#onRehacer"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Cortar" onAction="#onCortar"/>
+                    <MenuItem text="Copiar" onAction="#onCopiar"/>
+                    <MenuItem text="Pegar" onAction="#onPegar"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Seleccionar todo" onAction="#onSeleccionarTodo"/>
+                </Menu>
+                <Menu text="Formato">
+                    <CheckMenuItem fx:id="mnuAjuste" text="Ajuste de línea" selected="true"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Aumentar fuente" onAction="#onAumentarFuente"/>
+                    <MenuItem text="Reducir fuente" onAction="#onReducirFuente"/>
+                    <MenuItem text="Tamaño predeterminado" onAction="#onFuentePredeterminada"/>
+                </Menu>
+            </MenuBar>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="barra-editor">
+                <Button text="←  Notas" onAction="#onVolver" styleClass="boton-volver"/>
+                <TextField fx:id="txtTitulo" promptText="Título" styleClass="campo-titulo"
+                           HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TextArea fx:id="txtContenido" promptText="Escribe aquí…" styleClass="area-texto"/>
+    </center>
+
+    <bottom>
+        <HBox styleClass="barra-estado" spacing="20" alignment="CENTER_LEFT">
+            <Label fx:id="lblGuardado" text=""/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblConteo" text=""/>
+        </HBox>
+    </bottom>
+</BorderPane>

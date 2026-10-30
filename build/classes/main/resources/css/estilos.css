@@ -1,0 +1,30 @@
+.raiz { -fx-background-color: #f3f3f3; -fx-font-family: "Segoe UI", "System"; }
+
+/* Pantalla de inicio */
+.barra-superior { -fx-background-color: white; -fx-padding: 14 24; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0; }
+.titulo-app { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #202020; }
+.scroll-notas, .scroll-notas > .viewport, .cuadricula { -fx-background-color: transparent; -fx-background: transparent; }
+
+.ficha { -fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dcdcdc; -fx-border-radius: 8; -fx-padding: 14; -fx-cursor: hand;
+         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2); }
+.ficha:hover { -fx-border-color: #0067c0; }
+.ficha-titulo { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #202020; }
+.ficha-texto { -fx-font-size: 12px; -fx-text-fill: #555555; -fx-alignment: top-left; }
+.ficha-fecha { -fx-font-size: 11px; -fx-text-fill: #888888; }
+
+.vacio-titulo { -fx-font-size: 22px; -fx-text-fill: #555555; -fx-font-weight: bold; }
+.vacio-texto { -fx-font-size: 15px; -fx-text-fill: #888888; }
+
+.boton-fab { -fx-background-color: #0067c0; -fx-text-fill: white; -fx-font-size: 32px; -fx-background-radius: 50; -fx-min-width: 60; -fx-min-height: 60;
+             -fx-max-width: 60; -fx-max-height: 60; -fx-padding: 0 0 4 0; -fx-cursor: hand;
+             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3); }
+.boton-fab:hover { -fx-background-color: #005a9e; }
+
+/* Editor */
+.barra-editor { -fx-background-color: white; -fx-padding: 8 12; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0; }
+.boton-volver { -fx-background-color: transparent; -fx-text-fill: #0067c0; -fx-cursor: hand; }
+.boton-volver:hover { -fx-background-color: #e8f0fa; }
+.campo-titulo { -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: transparent; }
+.area-texto { -fx-font-family: "Consolas", "Segoe UI"; -fx-background-color: white; }
+.area-texto .content { -fx-background-color: white; }
+.barra-estado { -fx-background-color: #f0f0f0; -fx-padding: 4 12; -fx-border-color: #dcdcdc; -fx-border-width: 1 0 0 0; -fx-font-size: 11px; -fx-text-fill: #555; }
