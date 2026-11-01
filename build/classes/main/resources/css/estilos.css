@@ -1,30 +1,61 @@
-.raiz { -fx-background-color: #f3f3f3; -fx-font-family: "Segoe UI", "System"; }
+.raiz { -fx-background-color: -c-fondo; -fx-font-family: "Segoe UI", "System"; }
 
-/* Pantalla de inicio */
-.barra-superior { -fx-background-color: white; -fx-padding: 14 24; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0; }
-.titulo-app { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #202020; }
+/* ---------- Pantalla de inicio ---------- */
+.barra-superior { -fx-background-color: -c-superficie; -fx-padding: 12 24; -fx-border-color: -c-borde; -fx-border-width: 0 0 1 0; }
+.titulo-app { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: -c-texto; }
+.etiqueta-tema { -fx-text-fill: -c-texto2; -fx-font-size: 12px; }
+.boton-tema { -fx-background-color: transparent; -fx-border-color: -c-borde; -fx-border-radius: 14; -fx-background-radius: 14;
+              -fx-text-fill: -c-texto2; -fx-padding: 4 14; -fx-cursor: hand; }
+.boton-tema:hover { -fx-border-color: -c-acento; }
+.boton-tema:selected { -fx-background-color: -c-acento; -fx-border-color: -c-acento; -fx-text-fill: -c-sobre-acento; }
+
 .scroll-notas, .scroll-notas > .viewport, .cuadricula { -fx-background-color: transparent; -fx-background: transparent; }
 
-.ficha { -fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #dcdcdc; -fx-border-radius: 8; -fx-padding: 14; -fx-cursor: hand;
-         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 2); }
-.ficha:hover { -fx-border-color: #0067c0; }
-.ficha-titulo { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #202020; }
-.ficha-texto { -fx-font-size: 12px; -fx-text-fill: #555555; -fx-alignment: top-left; }
-.ficha-fecha { -fx-font-size: 11px; -fx-text-fill: #888888; }
+.ficha { -fx-background-color: -c-superficie; -fx-background-radius: 8; -fx-border-color: -c-borde; -fx-border-radius: 8; -fx-padding: 14; -fx-cursor: hand;
+         -fx-effect: dropshadow(gaussian, -c-sombra, 6, 0, 0, 2); }
+.ficha:hover { -fx-border-color: -c-acento; }
+.ficha-titulo { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: -c-texto; }
+.ficha-texto { -fx-font-size: 12px; -fx-text-fill: -c-texto2; -fx-alignment: top-left; }
+.ficha-fecha { -fx-font-size: 11px; -fx-text-fill: -c-texto3; }
+.chip-marca { -fx-font-size: 11px; -fx-text-fill: -c-texto2; }
 
-.vacio-titulo { -fx-font-size: 22px; -fx-text-fill: #555555; -fx-font-weight: bold; }
-.vacio-texto { -fx-font-size: 15px; -fx-text-fill: #888888; }
+.vacio-titulo { -fx-font-size: 22px; -fx-text-fill: -c-texto2; -fx-font-weight: bold; }
+.vacio-texto { -fx-font-size: 15px; -fx-text-fill: -c-texto3; }
 
-.boton-fab { -fx-background-color: #0067c0; -fx-text-fill: white; -fx-font-size: 32px; -fx-background-radius: 50; -fx-min-width: 60; -fx-min-height: 60;
+.boton-fab { -fx-background-color: -c-acento; -fx-text-fill: -c-sobre-acento; -fx-font-size: 32px; -fx-background-radius: 50; -fx-min-width: 60; -fx-min-height: 60;
              -fx-max-width: 60; -fx-max-height: 60; -fx-padding: 0 0 4 0; -fx-cursor: hand;
              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 3); }
-.boton-fab:hover { -fx-background-color: #005a9e; }
+.boton-fab:hover { -fx-opacity: 0.88; }
 
-/* Editor */
-.barra-editor { -fx-background-color: white; -fx-padding: 8 12; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0; }
-.boton-volver { -fx-background-color: transparent; -fx-text-fill: #0067c0; -fx-cursor: hand; }
-.boton-volver:hover { -fx-background-color: #e8f0fa; }
-.campo-titulo { -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: transparent; }
-.area-texto { -fx-font-family: "Consolas", "Segoe UI"; -fx-background-color: white; }
-.area-texto .content { -fx-background-color: white; }
-.barra-estado { -fx-background-color: #f0f0f0; -fx-padding: 4 12; -fx-border-color: #dcdcdc; -fx-border-width: 1 0 0 0; -fx-font-size: 11px; -fx-text-fill: #555; }
+/* ---------- Editor ---------- */
+.barra-editor { -fx-background-color: -c-superficie; -fx-padding: 8 12; -fx-border-color: -c-borde; -fx-border-width: 0 0 1 0; }
+.boton-volver { -fx-background-color: transparent; -fx-text-fill: -c-acento; -fx-cursor: hand; }
+.boton-volver:hover { -fx-background-color: -c-acento-suave; }
+.boton-adjuntar { -fx-background-color: -c-acento-suave; -fx-text-fill: -c-acento; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 6 14; -fx-cursor: hand; }
+.boton-adjuntar:hover { -fx-background-color: -c-acento; -fx-text-fill: -c-sobre-acento; }
+.campo-titulo { -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: transparent;
+                -fx-text-fill: -c-texto; -fx-prompt-text-fill: -c-texto3; }
+
+.editor-scroll, .editor-scroll > .viewport { -fx-background: -c-superficie; -fx-background-color: -c-superficie; }
+.lienzo { -fx-background-color: -c-superficie; -fx-padding: 14 20 30 20; }
+
+.bloque-texto { -fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0; -fx-text-inner-color: -c-texto;
+                -fx-highlight-fill: -c-acento; -fx-highlight-text-fill: -c-sobre-acento; -fx-prompt-text-fill: -c-texto3;
+                -fx-focus-color: transparent; -fx-faint-focus-color: transparent; }
+.bloque-texto .content { -fx-background-color: transparent; -fx-padding: 2 4 2 4; }
+
+.barra-bloque { -fx-background-color: -c-fondo; -fx-background-radius: 6; -fx-border-color: -c-borde; -fx-border-radius: 6; -fx-padding: 2 4; }
+.boton-mini { -fx-background-color: transparent; -fx-text-fill: -c-texto2; -fx-font-size: 11px; -fx-padding: 2 7; -fx-cursor: hand; }
+.boton-mini:hover, .boton-mini-activo { -fx-background-color: -c-acento-suave; -fx-text-fill: -c-acento; }
+
+.marco-imagen { -fx-border-color: transparent; -fx-border-width: 1; }
+.marco-imagen:hover { -fx-border-color: -c-acento; }
+.tirador { -fx-background-color: -c-acento; -fx-background-radius: 3; }
+
+.tarjeta-archivo { -fx-background-color: -c-fondo; -fx-background-radius: 8; -fx-border-color: -c-borde; -fx-border-radius: 8; -fx-padding: 8 10; }
+.insignia-archivo { -fx-background-color: -c-acento; -fx-text-fill: -c-sobre-acento; -fx-font-weight: bold; -fx-font-size: 11px;
+                    -fx-background-radius: 6; -fx-padding: 8 10; -fx-min-width: 46; -fx-alignment: center; }
+.archivo-nombre { -fx-text-fill: -c-texto; -fx-font-weight: bold; }
+.archivo-info { -fx-text-fill: -c-texto3; -fx-font-size: 11px; }
+
+.barra-estado { -fx-background-color: -c-barra; -fx-padding: 4 12; -fx-border-color: -c-borde; -fx-border-width: 1 0 0 0; -fx-font-size: 11px; -fx-text-fill: -c-texto2; }

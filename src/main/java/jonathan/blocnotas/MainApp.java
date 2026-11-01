@@ -10,12 +10,12 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Bloc de notas");
+        stage.setTitle("Bloc de notas - Personal");
         stage.setMinWidth(640);
         stage.setMinHeight(480);
         
         // Icono de la ventana
-        try (InputStream is = MainApp.class.getResourceAsStream("/main/resources/img/icono.ico")) {
+        try (InputStream is = MainApp.class.getResourceAsStream("/main/resources/img/icono.png")) {
             if (is != null) {
                 stage.getIcons().add(new Image(is));
             }

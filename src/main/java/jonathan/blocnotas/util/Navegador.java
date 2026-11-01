@@ -15,17 +15,18 @@ import main.java.jonathan.blocnotas.model.Nota;
 public final class Navegador {
 
     private static final String RUTA_VISTAS = "/main/resources/view/";
-    private static final String RUTA_CSS = "/main/resources/css/estilos.css";
 
     private static Stage stage;
     private static Object controladorActual;
 
     private Navegador() {}
 
+    public static Stage getStage() { return stage; }
+
     public static void iniciar(Stage s) {
         stage = s;
         Scene scene = new Scene(new StackPane(), 960, 640);
-        scene.getStylesheets().add(recurso(RUTA_CSS).toExternalForm());
+        Tema.aplicar(scene, Tema.cargar());
         stage.setScene(scene);
     }
 
@@ -38,7 +39,6 @@ public final class Navegador {
         c.setNota(nota);
     }
 
-    /** Se llama al cerrar la app: guarda la nota abierta, si la hay. */
     public static void guardarAlSalir() {
         if (controladorActual instanceof EditorController e) e.guardar();
     }
@@ -57,9 +57,7 @@ public final class Navegador {
 
     private static URL recurso(String ruta) {
         URL url = Navegador.class.getResource(ruta);
-        if (url == null) {
-            throw new IllegalStateException("No se encontró el recurso: " + ruta);
-        }
+        if (url == null) throw new IllegalStateException("No se encontró el recurso: " + ruta);
         return url;
     }
 }

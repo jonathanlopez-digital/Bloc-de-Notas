@@ -23,9 +23,11 @@
                     <MenuItem text="Exportar a PDF" onAction="#onExportarPdf">
                         <accelerator><KeyCodeCombination code="E" control="DOWN" alt="UP" shift="UP" meta="UP" shortcut="UP"/></accelerator>
                     </MenuItem>
+                    <SeparatorMenuItem/>
                     <MenuItem text="Imprimir…" onAction="#onImprimir">
                         <accelerator><KeyCodeCombination code="P" control="DOWN" alt="UP" shift="UP" meta="UP" shortcut="UP"/></accelerator>
                     </MenuItem>
+                    <MenuItem text="Imprimir como factura…" onAction="#onImprimirFactura"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="Eliminar nota" onAction="#onEliminar"/>
                     <MenuItem text="Salir" onAction="#onSalir"/>
@@ -39,26 +41,34 @@
                     <MenuItem text="Pegar" onAction="#onPegar"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="Seleccionar todo" onAction="#onSeleccionarTodo"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Adjuntar…" onAction="#onAdjuntar">
+                        <accelerator><KeyCodeCombination code="A" control="DOWN" alt="UP" shift="DOWN" meta="UP" shortcut="UP"/></accelerator>
+                    </MenuItem>
                 </Menu>
                 <Menu text="Formato">
-                    <CheckMenuItem fx:id="mnuAjuste" text="Ajuste de línea" selected="true"/>
-                    <SeparatorMenuItem/>
                     <MenuItem text="Aumentar fuente" onAction="#onAumentarFuente"/>
                     <MenuItem text="Reducir fuente" onAction="#onReducirFuente"/>
                     <MenuItem text="Tamaño predeterminado" onAction="#onFuentePredeterminada"/>
                 </Menu>
+                <Menu fx:id="mnuMarca" text="Marca"/>
             </MenuBar>
 
             <HBox spacing="10" alignment="CENTER_LEFT" styleClass="barra-editor">
                 <Button text="←  Notas" onAction="#onVolver" styleClass="boton-volver"/>
-                <TextField fx:id="txtTitulo" promptText="Título" styleClass="campo-titulo"
-                           HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="txtTitulo" promptText="Título" styleClass="campo-titulo" HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblMarca" styleClass="chip-marca"/>
+                <Button text="Adjuntar" onAction="#onAdjuntar" styleClass="boton-adjuntar"/>
             </HBox>
         </VBox>
     </top>
 
     <center>
-        <TextArea fx:id="txtContenido" promptText="Escribe aquí…" styleClass="area-texto"/>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="editor-scroll">
+            <content>
+                <VBox fx:id="lienzo" spacing="2" styleClass="lienzo"/>
+            </content>
+        </ScrollPane>
     </center>
 
     <bottom>

@@ -1,0 +1,19 @@
+.root {
+    -c-fondo: #f3f3f3;
+    -c-superficie: #ffffff;
+    -c-texto: #202020;
+    -c-texto2: #555555;
+    -c-texto3: #888888;
+    -c-borde: #dcdcdc;
+    -c-acento: #0067c0;
+    -c-acento-suave: #e8f0fa;
+    -c-sobre-acento: #ffffff;
+    -c-barra: #f0f0f0;
+    -c-sombra: rgba(0,0,0,0.08);
+
+    -fx-base: #ececec;
+    -fx-background: #f3f3f3;
+    -fx-control-inner-background: #ffffff;
+    -fx-accent: #0067c0;
+    -fx-focus-color: #0067c0;
+}

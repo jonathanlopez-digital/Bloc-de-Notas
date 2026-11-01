@@ -8,8 +8,16 @@
             fx:controller="main.java.jonathan.blocnotas.controller.HomeController"
             styleClass="raiz">
     <top>
-        <HBox styleClass="barra-superior" alignment="CENTER_LEFT">
+        <HBox styleClass="barra-superior" alignment="CENTER_LEFT" spacing="8">
+            <fx:define>
+                <ToggleGroup fx:id="grupoTema"/>
+            </fx:define>
             <Label text="Mis notas" styleClass="titulo-app"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Tema" styleClass="etiqueta-tema"/>
+            <ToggleButton fx:id="btnClaro" text="Claro" toggleGroup="$grupoTema" onAction="#onTemaClaro" styleClass="boton-tema"/>
+            <ToggleButton fx:id="btnOscuro" text="Oscuro" toggleGroup="$grupoTema" onAction="#onTemaOscuro" styleClass="boton-tema"/>
+            <ToggleButton fx:id="btnBeige" text="Beige" toggleGroup="$grupoTema" onAction="#onTemaBeige" styleClass="boton-tema"/>
         </HBox>
     </top>
     <center>
@@ -29,8 +37,7 @@
                 <Label text="Escribe tus ideas y empieza a crear" styleClass="vacio-texto"/>
             </VBox>
 
-            <Button text="+" onAction="#onNuevaNota" styleClass="boton-fab"
-                    StackPane.alignment="BOTTOM_RIGHT">
+            <Button text="+" onAction="#onNuevaNota" styleClass="boton-fab" StackPane.alignment="BOTTOM_RIGHT">
                 <StackPane.margin>
                     <Insets right="30" bottom="30"/>
                 </StackPane.margin>
